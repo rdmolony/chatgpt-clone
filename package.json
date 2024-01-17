@@ -5,13 +5,15 @@
     "watch": "npx shadow-cljs watch app browser-test karma-test",
     "release": "npx shadow-cljs release app",
     "build-report": "npx shadow-cljs run shadow.cljs.build-report app target/build-report.html",
-    "storybook": "npx storybook dev -p 6006",
+    "storybook": "npm run tailwind & npx storybook dev -p 6006",
     "build-storybook": "npx storybook build",
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./resources/public/css/tailwind.css --watch"
   },
   "dependencies": {
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "storybook": "^7.6.9"
+    "storybook": "^7.6.9",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.9",
