@@ -10,9 +10,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function UserInput(_ref) {
   _objectDestructuringEmpty(_ref);
-  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("input", {
-    className: "rounded-xl shadow-lg p-2 mt-2 mb-4 mx-12 bg-slate-50",
-    placeholder: "Message chatgpt..."
-  }));
+  return /*#__PURE__*/_react["default"].createElement("input", {
+    className: "bg-slate-50 rounded-xl shadow-lg my-4 mx-12 p-2 w-64",
+    placeholder: "Message ChatGPT..."
+  });
 }
 UserInput.propTypes = {};

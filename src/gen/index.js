@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
-    return _Input["default"];
+    return _UserInput["default"];
   }
 });
 Object.defineProperty(exports, "LLMResponse", {
@@ -21,7 +21,7 @@ Object.defineProperty(exports, "UserResponse", {
     return _UserResponse["default"];
   }
 });
-var _Input = _interopRequireDefault(require("./Input"));
+var _UserInput = _interopRequireDefault(require("./UserInput"));
 var _LLMResponse = _interopRequireDefault(require("./LLMResponse"));
 var _UserResponse = _interopRequireDefault(require("./UserResponse"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

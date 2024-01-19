@@ -1,10 +1,10 @@
-(ns irish-tutor.core
+(ns chatgpt.core
   (:require
    [reagent.dom :as rdom]
    [re-frame.core :as re-frame]
-   [irish-tutor.events :as events]
-   [irish-tutor.views :as views]
-   [irish-tutor.config :as config]
+   [chatgpt.events :as events]
+   [chatgpt.views :as views]
+   [chatgpt.config :as config]
    ))
 
 

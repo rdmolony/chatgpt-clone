@@ -1,7 +1,7 @@
-(ns irish-tutor.events
+(ns chatgpt.events
   (:require
    [re-frame.core :as re-frame]
-   [irish-tutor.db :as db]
+   [chatgpt.db :as db]
    ))
 
 (re-frame/reg-event-db

@@ -544,13 +544,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.m-12 {
-  margin: 3rem;
-}
-
 .mx-12 {
   margin-left: 3rem;
   margin-right: 3rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mb-4 {
@@ -561,17 +562,16 @@ video {
   margin-top: 0.5rem;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
+.max-w-64 {
+  max-width: 16rem;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
-}
-
-.border-2 {
-  border-width: 2px;
-}
-
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .bg-slate-50 {
@@ -581,11 +581,6 @@ video {
 
 .p-2 {
   padding: 0.5rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .text-center {

@@ -1,8 +1,8 @@
-import Input from "./Input";
+import Chat from "./Chat";
 
 export default {
-  component: Input,
-  title: "Input",
+  component: Chat,
+  title: "Chat",
   tags: ['autodocs'],
 };
 

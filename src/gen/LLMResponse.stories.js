@@ -13,6 +13,6 @@ var _default = exports["default"] = {
 };
 var Default = exports.Default = {
   args: {
-    text: "Dia Duit, cad faoi ar mhaith labhairt?"
+    text: "I'm an LLM"
   }
 };

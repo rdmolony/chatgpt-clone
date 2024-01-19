@@ -4,15 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = exports.Default = void 0;
-var _UserResponse = _interopRequireDefault(require("./UserResponse"));
+var _Chat = _interopRequireDefault(require("./Chat"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var _default = exports["default"] = {
-  component: _UserResponse["default"],
-  title: "UserResponse",
+  component: _Chat["default"],
+  title: "Chat",
   tags: ['autodocs']
 };
 var Default = exports.Default = {
-  args: {
-    text: "I'm a human"
-  }
+  args: {}
 };

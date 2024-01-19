@@ -1,4 +1,4 @@
-(ns irish-tutor.subs
+(ns chatgpt.subs
   (:require
    [re-frame.core :as re-frame]))
 

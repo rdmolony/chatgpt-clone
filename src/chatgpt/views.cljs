@@ -1,14 +1,14 @@
-(ns irish-tutor.views
+(ns chatgpt.views
   (:require
    [reagent.core :as reagent]
    [re-frame.core :as re-frame]
-   [irish-tutor.subs :as subs] 
+   [chatgpt.subs :as subs] 
    ["../gen/index.js" :as c]))
 
 (defn main-panel []
   (let [name (re-frame/subscribe [::subs/name])]
     [:div
-     [:> c/Input {:name @name}]
+     [:> c/Chat {:name @name}]
      ]))
 
 (comment

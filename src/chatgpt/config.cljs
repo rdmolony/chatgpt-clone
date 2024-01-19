@@ -1,4 +1,4 @@
-(ns irish-tutor.config)
+(ns chatgpt.config)
 
 (def debug?
   ^boolean goog.DEBUG)
