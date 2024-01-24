@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 export default function UserInput({ }) {
   return (
-    <div className="flex flex-col items-center w-full fixed bottom-0 mb-8">
+    <div className="flex flex-col items-center fixed bottom-0 w-full mb-4">
       <input
-          className="bg-slate-50 rounded-xl shadow-lg my-4 mx-12 p-2 w-64"
+          className="bg-transparent border-2 border-white border-opacity-25 rounded-xl p-4 mb-2 w-full max-w-screen-sm"
           placeholder="Message ChatGPT..." />
       <p className="text-xs">
         ChatGPT can make mistakes. Consider checking important information.

@@ -7,6 +7,6 @@
     @apply dark:bg-slate-700 dark:text-white
   }
   svg {
-    @apply dark:invert
+    @apply dark:fill-white
   }
 }

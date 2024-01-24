@@ -11,9 +11,9 @@ function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("
 function UserInput(_ref) {
   _objectDestructuringEmpty(_ref);
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "flex flex-col items-center w-full fixed bottom-0 mb-8"
+    className: "flex flex-col items-center fixed bottom-0 w-full mb-4"
   }, /*#__PURE__*/_react["default"].createElement("input", {
-    className: "bg-slate-50 rounded-xl shadow-lg my-4 mx-12 p-2 w-64",
+    className: "bg-transparent border-2 border-white border-opacity-25 rounded-xl p-4 mb-2 w-full max-w-screen-sm",
     placeholder: "Message ChatGPT..."
   }), /*#__PURE__*/_react["default"].createElement("p", {
     className: "text-xs"

@@ -1,4 +1,4 @@
-import LLMResponse from "./LLMResponse";
+import LLMResponse from "./Response";
 
 export default {
   component: LLMResponse,

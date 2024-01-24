@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 import Greeting from './Greeting';
 import UserInput from './UserInput';
-import LLMResponse from './LLMResponse';
-import UserResponse from './UserResponse';
+import { LLMResponse, UserResponse } from './Response';
 
 
 export default function Chat({ userResponses, llmResponses }) {
@@ -19,7 +18,7 @@ export default function Chat({ userResponses, llmResponses }) {
   }
 
   return (
-    <div className="text-center">
+    <div>
       {userResponses.map((userResponse, idx) => (
           <div key={idx} className="my-4">
             <UserResponse text={userResponse} />
