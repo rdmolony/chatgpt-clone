@@ -9,3 +9,16 @@ export default {
 export const Default = {
   args: { }
 };
+
+export const LLMResponse = {
+  args: { 
+    userResponses: [
+      "Hello",
+      "Hello again"
+    ],
+    llmResponses: [
+      "Hello from LLM",
+      "Hello again from LLM"
+    ]
+  }
+};

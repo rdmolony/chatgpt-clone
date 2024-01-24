@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.Default = void 0;
+exports["default"] = exports.LLMResponse = exports.Default = void 0;
 var _Chat = _interopRequireDefault(require("./Chat"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var _default = exports["default"] = {
@@ -13,4 +13,10 @@ var _default = exports["default"] = {
 };
 var Default = exports.Default = {
   args: {}
+};
+var LLMResponse = exports.LLMResponse = {
+  args: {
+    userResponses: ["Hello", "Hello again"],
+    llmResponses: ["Hello from LLM", "Hello again from LLM"]
+  }
 };

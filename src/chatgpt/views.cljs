@@ -8,7 +8,7 @@
 (defn main-panel []
   (let [name (re-frame/subscribe [::subs/name])]
     [:div
-     [:> c/Chat {:name @name}]
+     [:> c/Chat { }]
      ]))
 
 (comment

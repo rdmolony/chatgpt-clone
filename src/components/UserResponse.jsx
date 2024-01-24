@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default function UserResponse({ text }) {
   return (
     <div>
-      <p>{text}</p>
+      <p>> {text}</p>
     </div>
   )
 }
