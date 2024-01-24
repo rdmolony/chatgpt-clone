@@ -12,13 +12,15 @@ export const Default = {
 
 export const LLMResponse = {
   args: { 
-    userResponses: [
-      "Hello",
-      "Hello again"
-    ],
-    llmResponses: [
-      "Hello from LLM",
-      "Hello again from LLM"
+    responses: [
+      {
+        user: "Hello",
+        llm: "Hello from LLM"
+      },
+      {
+        user: "Hello again",
+        llm: "Hello again from LLM"
+      }
     ]
   }
 };

@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply dark:bg-slate-700 dark:text-white
+    @apply dark:bg-slate-700 dark:text-white text-slate-900
   }
   svg {
     @apply dark:fill-white

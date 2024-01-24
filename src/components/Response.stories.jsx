@@ -1,13 +1,26 @@
-import LLMResponse from "./Response";
+import {Response} from "./Response";
+import OpenAiIcon from './icons/OpenAi';
+import UserIcon from './icons/User';
+
 
 export default {
-  component: LLMResponse,
-  title: "LLMResponse",
+  component: Response,
+  title: "Response",
   tags: ['autodocs'],
 };
 
-export const Default = {
+export const LLMResponse = {
   args: { 
+    fromWhom: "ChatGPT",
+    Icon: OpenAiIcon,
     text: "I'm an LLM"
+  }
+};
+
+export const UserResponse = {
+  args: { 
+    fromWhom: "You",
+    Icon: UserIcon,
+    text: "Some drivel..."
   }
 };

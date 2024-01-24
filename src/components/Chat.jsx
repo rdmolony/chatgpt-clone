@@ -6,9 +6,9 @@ import UserInput from './UserInput';
 import { LLMResponse, UserResponse } from './Response';
 
 
-export default function Chat({ userResponses, llmResponses }) {
+export default function Chat({ responses }) {
   
-  if (userResponses.length === 0) {
+  if (responses.length === 0) {
     return (
       <div>
         <Greeting />
@@ -19,10 +19,10 @@ export default function Chat({ userResponses, llmResponses }) {
 
   return (
     <div>
-      {userResponses.map((userResponse, idx) => (
+      {responses.map((response, idx) => (
           <div key={idx} className="my-4">
-            <UserResponse text={userResponse} />
-            <LLMResponse text={llmResponses[idx]}/>
+            <UserResponse text={response.user} />
+            <LLMResponse text={response.llm}/>
           </div>
       ))}
       <UserInput />
@@ -31,13 +31,10 @@ export default function Chat({ userResponses, llmResponses }) {
 }
 
 Chat.defaultProps = {
-  userResponses: [],
-  llmResponses: [],
+  responses: [],
 }
 
 Chat.propTypes = {
-  /** List of LLM text responses  */
-  llmResponses: PropTypes.arrayOf(PropTypes.string),
-  /** List of user input text */
-  userResponses: PropTypes.arrayOf(PropTypes.string),
+  /** List of User & LLM text responses  */
+  responses: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
 };
