@@ -9,7 +9,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var _default = exports["default"] = {
   component: _UserInput["default"],
   title: "Input",
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  decorators: [function (Story) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "h-32"
+    }, /*#__PURE__*/React.createElement(Story, null));
+  }]
 };
 var Default = exports.Default = {
   args: {}

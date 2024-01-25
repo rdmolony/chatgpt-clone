@@ -1,4 +1,4 @@
-import {Response} from "./Response";
+import Response from "./Response";
 import OpenAiIcon from './icons/OpenAi';
 import UserIcon from './icons/User';
 
@@ -21,6 +21,6 @@ export const UserResponse = {
   args: { 
     fromWhom: "You",
     Icon: UserIcon,
-    text: "Some drivel..."
+    text: "I am you"
   }
 };
