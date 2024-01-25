@@ -9,7 +9,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var _default = exports["default"] = {
   component: _Chat["default"],
   title: "Chat",
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  decorators: [function (Story) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "h-screen"
+    }, /*#__PURE__*/React.createElement(Story, null));
+  }]
 };
 var Default = exports.Default = {
   args: {}

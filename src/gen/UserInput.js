@@ -6,18 +6,30 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = UserInput;
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function UserInput(_ref) {
-  _objectDestructuringEmpty(_ref);
-  return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "fixed bottom-0 my-4 w-full min-h-0 justify-center text-center"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "mx-auto mb-4 w-full max-w-screen-sm"
+  var onClickHandler = _ref.onClickHandler;
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("form", {
+    className: "flex bg-transparent border-2 border-grey-100 border-opacity-25 focus:outline focus:outline-blue-200 rounded-xl mx-auto mb-4 w-full max-w-screen-sm p-4"
   }, /*#__PURE__*/_react["default"].createElement("input", {
-    placeholder: "Message ChatGPT...",
-    className: "bg-transparent border-2 border-grey-100 border-opacity-25 rounded-xl w-full p-4"
-  })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full"
+    className: "flex-grow focus:outline-none",
+    placeholder: "Message ChatGPT..."
+  }), /*#__PURE__*/_react["default"].createElement("button", {
+    className: "flex-shrink-0 ml-auto bg-slate-200 text-white p-0.5 rounded-lg dark:text-black dark:border-white dark:bg-white",
+    onClick: onClickHandler
+  }, /*#__PURE__*/_react["default"].createElement("svg", {
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    "class": "text-white dark:text-black"
+  }, /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M7 11L12 6L17 11M12 18V7",
+    stroke: "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  })))), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "w-full text-center"
   }, /*#__PURE__*/_react["default"].createElement("p", {
     className: "text-xs mx-auto"
   }, "ChatGPT can make mistakes. Consider checking important information.")));

@@ -4,6 +4,13 @@ export default {
   component: Chat,
   title: "Chat",
   tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <div className="h-screen">
+        <Story />
+      </div>
+    ),
+  ]
 };
 
 export const Default = {

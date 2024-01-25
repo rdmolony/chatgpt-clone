@@ -6,7 +6,7 @@
    ["../gen/index.js" :as c]))
 
 (defn main-panel []
-  (let [name (re-frame/subscribe [::subs/name])]
+  (let [responses (re-frame/subscribe [::subs/responses])]
     [:div
      [:> c/Chat { }]
      ]))

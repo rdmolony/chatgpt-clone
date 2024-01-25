@@ -8,20 +8,22 @@ import OpenAiIcon from './icons/OpenAi';
 import UserIcon from './icons/User';
 
 
-export default function Chat({ responses }) {
+export default function Chat({ responses, onSubmitHandler }) {
   
   if (responses.length === 0) {
     return (
-      <div>
-        <Greeting />
+      <div className="h-screen mb-4">
+        <div className="flex justify-center items-center h-5/6">
+          <Greeting/>
+        </div>
         <UserInput />
       </div>
     )
   }
 
   return (
-    <div>
-      <div className="mb-32">
+    <div className="h-screen">
+      <div>
         {responses.map((response, idx) => (
             <div key={idx} className="my-4">
               <Response fromWhom="You" Icon={UserIcon} text={response.user} />
@@ -29,16 +31,19 @@ export default function Chat({ responses }) {
             </div>
         ))}
       </div>
-      <UserInput />
+      <UserInput onClickHandler={onSubmitHandler}/>
     </div>
   )
 }
 
 Chat.defaultProps = {
   responses: [],
+  onSubmitHandler: () => alert("Click!")
 }
 
 Chat.propTypes = {
   /** List of User & LLM text responses  */
   responses: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  /** Event on click  */
+  onSubmitHandler: PropTypes.func
 };
