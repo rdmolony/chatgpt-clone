@@ -17,7 +17,7 @@ function Icon(_ref) {
     viewBox: "0 0 41 41",
     fill: "none",
     xmlns: "http://www.w3.org/2000/svg",
-    "class": "icon-sm",
+    className: "icon-sm",
     role: "img"
   }, /*#__PURE__*/_react["default"].createElement("text", {
     x: "-9999",

@@ -15,12 +15,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function Chat(_ref) {
   var responses = _ref.responses,
     onSubmitHandler = _ref.onSubmitHandler;
+  // const onSubmitHandler = (event) => {
+  //   event.preventDefault();
+  //   alert("Click!");
+  // };
+
   if (responses.length === 0) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: "h-screen mb-4"
     }, /*#__PURE__*/_react["default"].createElement("div", {
       className: "flex justify-center items-center h-5/6"
-    }, /*#__PURE__*/_react["default"].createElement(_Greeting["default"], null)), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], null));
+    }, /*#__PURE__*/_react["default"].createElement(_Greeting["default"], null)), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
+      onSubmitHandler: onSubmitHandler
+    }));
   }
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "h-screen"
@@ -38,14 +45,11 @@ function Chat(_ref) {
       text: response.llm
     }));
   })), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
-    onClickHandler: onSubmitHandler
+    onSubmitHandler: onSubmitHandler
   }));
 }
 Chat.defaultProps = {
-  responses: [],
-  onSubmitHandler: function onSubmitHandler() {
-    return alert("Click!");
-  }
+  responses: []
 };
 Chat.propTypes = {
   /** List of User & LLM text responses  */

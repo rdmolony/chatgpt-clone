@@ -10,13 +10,18 @@ import UserIcon from './icons/User';
 
 export default function Chat({ responses, onSubmitHandler }) {
   
+  // const onSubmitHandler = (event) => {
+  //   event.preventDefault();
+  //   alert("Click!");
+  // };
+
   if (responses.length === 0) {
     return (
       <div className="h-screen mb-4">
         <div className="flex justify-center items-center h-5/6">
           <Greeting/>
         </div>
-        <UserInput />
+        <UserInput onSubmitHandler={onSubmitHandler} />
       </div>
     )
   }
@@ -31,14 +36,13 @@ export default function Chat({ responses, onSubmitHandler }) {
             </div>
         ))}
       </div>
-      <UserInput onClickHandler={onSubmitHandler}/>
+      <UserInput onSubmitHandler={onSubmitHandler}/>
     </div>
   )
 }
 
 Chat.defaultProps = {
   responses: [],
-  onSubmitHandler: () => alert("Click!")
 }
 
 Chat.propTypes = {
