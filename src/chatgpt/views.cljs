@@ -8,8 +8,9 @@
 (defn on-submit-handler [event]
   (.preventDefault event)
   (let [form (.-target event)
-        formData (js/FormData. form)]
-    (.alert js/window (str "You asked: " formData))))
+        formData (js/FormData. form)
+        formJson (js/JSON.stringify formData)]
+    (.alert js/window (str "You asked: " formJson))))
 
 (defn main-panel []
   (let [responses (re-frame/subscribe [::subs/responses])]
