@@ -5,17 +5,15 @@
    [chatgpt.subs :as subs] 
    ["../gen/index.js" :as c]))
 
-(defn on-submit-handler [event]
-  (.preventDefault event)
-  (let [form (.-target event)
-        formData (js/FormData. form)
-        formJson (js/JSON.stringify formData)]
-    (.alert js/window (str "You asked: " formJson))))
-
 (defn main-panel []
   (let [responses (re-frame/subscribe [::subs/responses])]
     [:div
-     [:> c/Chat { "onSubmitHandler" on-submit-handler }]
+     [:> c/Chat 
+      { "responses" @responses
+        "onSubmitHandler" (fn [e]
+                            (.preventDefault e)
+                            (re-frame/dispatch [:submit e])
+                            )}]
      ]))
 
 (comment

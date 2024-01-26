@@ -9,11 +9,6 @@ import UserIcon from './icons/User';
 
 
 export default function Chat({ responses, onSubmitHandler }) {
-  
-  // const onSubmitHandler = (event) => {
-  //   event.preventDefault();
-  //   alert("Click!");
-  // };
 
   if (responses.length === 0) {
     return (

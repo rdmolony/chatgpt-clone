@@ -15,11 +15,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function Chat(_ref) {
   var responses = _ref.responses,
     onSubmitHandler = _ref.onSubmitHandler;
-  // const onSubmitHandler = (event) => {
-  //   event.preventDefault();
-  //   alert("Click!");
-  // };
-
   if (responses.length === 0) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: "h-screen mb-4"
