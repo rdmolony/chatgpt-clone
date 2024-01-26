@@ -13,7 +13,8 @@ var _OpenAi = _interopRequireDefault(require("./icons/OpenAi"));
 var _User = _interopRequireDefault(require("./icons/User"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function Chat(_ref) {
-  var priorMessages = _ref.priorMessages,
+  var message = _ref.message,
+    priorMessages = _ref.priorMessages,
     onInputHandler = _ref.onInputHandler,
     onSubmitHandler = _ref.onSubmitHandler;
   if (priorMessages.length === 0) {
@@ -22,6 +23,7 @@ function Chat(_ref) {
     }, /*#__PURE__*/_react["default"].createElement("div", {
       className: "flex justify-center items-center h-5/6"
     }, /*#__PURE__*/_react["default"].createElement(_Greeting["default"], null)), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
+      value: message,
       onInputHandler: onInputHandler,
       onSubmitHandler: onSubmitHandler
     }));
@@ -42,6 +44,7 @@ function Chat(_ref) {
       text: response.llm
     }));
   })), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
+    value: message,
     onInputHandler: onInputHandler,
     onSubmitHandler: onSubmitHandler
   }));

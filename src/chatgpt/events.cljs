@@ -3,7 +3,6 @@
    [re-frame.core :as re-frame] 
    [day8.re-frame.tracing :refer-macros [fn-traced]]
    [chatgpt.db :as db]
-   [chatgpt.handlers :as handler]
    ))
 
 (re-frame/reg-event-db
@@ -12,5 +11,6 @@
    db/default-db))
 
 (re-frame/reg-event-db
- :submit
- handler/on-submit)
+ :submit-message
+ (fn-traced [db [_ message]]
+            (update db :prior-messages conj {:user message :llm message})))

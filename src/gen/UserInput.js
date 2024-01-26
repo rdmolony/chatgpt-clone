@@ -7,12 +7,15 @@ exports["default"] = UserInput;
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function UserInput(_ref) {
-  var onInputHandler = _ref.onInputHandler,
+  var value = _ref.value,
+    onInputHandler = _ref.onInputHandler,
     onSubmitHandler = _ref.onSubmitHandler;
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("form", {
     onSubmit: onSubmitHandler,
     className: "flex bg-transparent border-2 border-grey-100 border-opacity-25 focus:outline focus:outline-blue-200 rounded-xl mx-auto mb-4 w-full max-w-screen-sm p-4"
   }, /*#__PURE__*/_react["default"].createElement("input", {
+    // TODO
+    //  value={value}
     onInput: onInputHandler,
     className: "flex-grow focus:outline-none",
     placeholder: "Message ChatGPT..."

@@ -7,20 +7,18 @@
 
 (defn main-panel []
   (let [message (reagent/atom "")
-        priorMessages (re-frame/subscribe [::subs/priorMessages])]
+        prior-messages (re-frame/subscribe [::subs/prior-messages])]
     [:div
      [:> c/Chat 
-      { "priorMessages" @priorMessages
+      { "message" @message
+        "priorMessages" @prior-messages
         "onInputHandler" (fn [e]
                             (reset! message (-> e .-target .-value)))
         "onSubmitHandler" (fn [e]
                             (.preventDefault e)
-                            (re-frame/dispatch [:submit @message])
+                            (re-frame/dispatch [:submit-message @message])
+                            (reset! message "")
+                            (js/console.log @prior-messages)
                             )}]
      ]))
 
-(comment
-  (js/alert "Hi!")
-  (println "Hi!")
-  (reagent/adapt-react-class c/Chat)
-  )
