@@ -3,6 +3,6 @@
    [re-frame.core :as re-frame]))
 
 (re-frame/reg-sub
- ::responses
+ ::priorMessages
  (fn [db]
-   (:responses db)))
+   (:priorMessages db)))

@@ -8,15 +8,18 @@ import OpenAiIcon from './icons/OpenAi';
 import UserIcon from './icons/User';
 
 
-export default function Chat({ responses, onSubmitHandler }) {
+export default function Chat({
+  priorMessages, onInputHandler, onSubmitHandler
+}) {
 
-  if (responses.length === 0) {
+  if (priorMessages.length === 0) {
     return (
       <div className="h-screen mb-4">
         <div className="flex justify-center items-center h-5/6">
           <Greeting/>
         </div>
-        <UserInput onSubmitHandler={onSubmitHandler} />
+        <UserInput onInputHandler={onInputHandler}
+                   onSubmitHandler={onSubmitHandler} />
       </div>
     )
   }
@@ -24,25 +27,24 @@ export default function Chat({ responses, onSubmitHandler }) {
   return (
     <div className="h-screen">
       <div>
-        {responses.map((response, idx) => (
+        {priorMessages.map((response, idx) => (
             <div key={idx} className="my-4">
               <Response fromWhom="You" Icon={UserIcon} text={response.user} />
               <Response fromWhom="ChatGPT" Icon={OpenAiIcon} text={response.llm} />
             </div>
         ))}
       </div>
-      <UserInput onSubmitHandler={onSubmitHandler}/>
+      <UserInput onInputHandler={onInputHandler}
+                 onSubmitHandler={onSubmitHandler}/>
     </div>
   )
 }
 
-Chat.defaultProps = {
-  responses: [],
-}
-
 Chat.propTypes = {
-  /** List of User & LLM text responses  */
-  responses: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
-  /** Event on click  */
-  onSubmitHandler: PropTypes.func
+  /** List of User messages & LLM responses  */
+  priorMessages: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  /** Event on text input  */
+  onInputHandler: PropTypes.func,
+  /** Event on form submission  */
+  onSubmitHandler: PropTypes.func,
 };

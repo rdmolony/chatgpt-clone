@@ -6,13 +6,16 @@
    ["../gen/index.js" :as c]))
 
 (defn main-panel []
-  (let [responses (re-frame/subscribe [::subs/responses])]
+  (let [message (reagent/atom "")
+        priorMessages (re-frame/subscribe [::subs/priorMessages])]
     [:div
      [:> c/Chat 
-      { "responses" @responses
+      { "priorMessages" @priorMessages
+        "onInputHandler" (fn [e]
+                            (reset! message (-> e .-target .-value)))
         "onSubmitHandler" (fn [e]
                             (.preventDefault e)
-                            (re-frame/dispatch [:submit e])
+                            (re-frame/dispatch [:submit @message])
                             )}]
      ]))
 
