@@ -10,14 +10,13 @@
         prior-messages (re-frame/subscribe [::subs/prior-messages])]
     [:div
      [:> c/Chat 
-      { "message" @message
+      { "message" ""
         "priorMessages" @prior-messages
         "onInputHandler" (fn [e]
                             (reset! message (-> e .-target .-value)))
         "onSubmitHandler" (fn [e]
                             (.preventDefault e)
-                            (re-frame/dispatch [:submit-message @message])
-                            (reset! message "")
+                            (re-frame/dispatch [:submit-message @message]) 
                             (js/console.log @prior-messages)
                             )}]
      ]))
