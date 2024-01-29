@@ -9,7 +9,7 @@ import UserIcon from './icons/User';
 
 
 export default function Chat({
-  message, priorMessages, onInputHandler, onSubmitHandler
+  id, priorMessages, onInputHandler, onSubmitHandler
 }) {
 
   if (priorMessages.length === 0) {
@@ -18,7 +18,7 @@ export default function Chat({
         <div className="flex justify-center items-center h-5/6">
           <Greeting/>
         </div>
-        <UserInput value={message}
+        <UserInput id={id}
                    onInputHandler={onInputHandler}
                    onSubmitHandler={onSubmitHandler} />
       </div>
@@ -35,7 +35,7 @@ export default function Chat({
             </div>
         ))}
       </div>
-      <UserInput value={message}
+      <UserInput id={id}
                  onInputHandler={onInputHandler}
                  onSubmitHandler={onSubmitHandler}/>
     </div>

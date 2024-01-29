@@ -1,13 +1,12 @@
 import React from 'react';
 
 
-export default function UserInput({ value, onInputHandler, onSubmitHandler }) {
+export default function UserInput({ id, onInputHandler, onSubmitHandler }) {
   return (
     <div>
       <form onSubmit={onSubmitHandler}
             className="flex bg-transparent border-2 border-grey-100 border-opacity-25 focus:outline focus:outline-blue-200 rounded-xl mx-auto mb-4 w-full max-w-screen-sm p-4">
-        <input 
-               // value={value}
+        <input id={id}
                onInput={onInputHandler}
                className="flex-grow focus:outline-none"
                placeholder="Message ChatGPT..."/>
