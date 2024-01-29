@@ -7,19 +7,23 @@
 
 (defn main-panel []
   (let [message (reagent/atom "")
+        message-counter (reagent/atom 0)
         input-id (random-uuid)
-        input-field (-> input-id js/document.getElementById .-value)
-        prior-messages (re-frame/subscribe [::subs/prior-messages])]
+        messages (re-frame/subscribe [::subs/messages])]
     [:div
      [:> c/Chat 
       { "inputId" input-id
-       "priorMessages" @prior-messages
+       "messages" @messages
        "onInputHandler" (fn [e]
                           (reset! message (-> e .-target .-value)))
        "onSubmitHandler" (fn [e]
-                           (.preventDefault e)
-                           (re-frame/dispatch [:submit-message @message])
-                           (set! input-field "")
+                           (.preventDefault e) 
+                           (re-frame/dispatch [:submit-message @message-counter @message])
+                           (set! (-> input-id js/document.getElementById .-value) "") 
+                           (swap! message-counter inc)
                            )}]
      ]))
 
+(comment
+  (def counter (reagent/atom 0)) 
+  (swap! counter inc))

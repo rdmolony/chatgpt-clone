@@ -9,16 +9,16 @@ import UserIcon from './icons/User';
 
 
 export default function Chat({
-  inputId, priorMessages, onInputHandler, onSubmitHandler
+  inputId, messages, onInputHandler, onSubmitHandler
 }) {
 
-  if (priorMessages.length === 0) {
+  if (Object.keys(messages).length === 0) {
     return (
       <div className="h-screen mb-4">
         <div className="flex justify-center items-center h-5/6">
           <Greeting/>
         </div>
-        <UserInput id={inputId}
+        <UserInput inputId={inputId}
                    onInputHandler={onInputHandler}
                    onSubmitHandler={onSubmitHandler} />
       </div>
@@ -28,14 +28,14 @@ export default function Chat({
   return (
     <div className="h-screen">
       <div>
-        {priorMessages.map((response, idx) => (
-            <div key={idx} className="my-4">
-              <Response fromWhom="You" Icon={UserIcon} text={response.user} />
-              <Response fromWhom="ChatGPT" Icon={OpenAiIcon} text={response.llm} />
-            </div>
+        {Object.keys(messages).map((idx) => (
+          <div key={idx} className="my-4">
+            <Response fromWhom="You" Icon={UserIcon} text={messages[idx].user} />
+            <Response fromWhom="ChatGPT" Icon={OpenAiIcon} text={messages[idx].llm} />
+          </div>
         ))}
       </div>
-      <UserInput id={inputId}
+      <UserInput inputId={inputId}
                  onInputHandler={onInputHandler}
                  onSubmitHandler={onSubmitHandler}/>
     </div>
@@ -43,12 +43,12 @@ export default function Chat({
 }
 
 Chat.defaultProps = {
-  priorMessages: [],
+  messages: {},
 }
 
 Chat.propTypes = {
   /** List of User messages & LLM responses  */
-  priorMessages: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
+  messages: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
   /** Event on text input  */
   onInputHandler: PropTypes.func,
   /** Event on form submission  */

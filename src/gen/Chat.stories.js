@@ -24,12 +24,15 @@ var Default = exports.Default = {
 var LLMResponse = exports.LLMResponse = {
   args: {
     inputId: 123,
-    priorMessages: [{
-      user: "Hello",
-      llm: "Hello from LLM"
-    }, {
-      user: "Hello again",
-      llm: "Hello again from LLM"
-    }]
+    messages: {
+      0: {
+        user: "Hello",
+        llm: "Hello from LLM"
+      },
+      1: {
+        user: "Hello again",
+        llm: "Hello again from LLM"
+      }
+    }
   }
 };

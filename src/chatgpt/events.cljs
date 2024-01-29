@@ -12,5 +12,5 @@
 
 (re-frame/reg-event-db
  :submit-message
- (fn-traced [db [_ message]]
-            (update db :prior-messages conj {:user message :llm message})))
+ (fn-traced [db [_ message-id message]]
+            (update db :messages conj {message-id {:user message :llm message}})))

@@ -20,15 +20,15 @@ export const Default = {
 export const LLMResponse = {
   args: { 
     inputId: 123,
-    priorMessages: [
-      {
+    messages: {
+      0: {
         user: "Hello",
         llm: "Hello from LLM"
       },
-      {
+      1: {
         user: "Hello again",
         llm: "Hello again from LLM"
       }
-    ]
+    }
   }
 };
