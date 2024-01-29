@@ -12,7 +12,7 @@
         prior-messages (re-frame/subscribe [::subs/prior-messages])]
     [:div
      [:> c/Chat 
-      { "id" input-id
+      { "inputId" input-id
        "priorMessages" @prior-messages
        "onInputHandler" (fn [e]
                           (reset! message (-> e .-target .-value)))

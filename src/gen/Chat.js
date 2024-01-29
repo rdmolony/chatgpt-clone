@@ -13,7 +13,7 @@ var _OpenAi = _interopRequireDefault(require("./icons/OpenAi"));
 var _User = _interopRequireDefault(require("./icons/User"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function Chat(_ref) {
-  var id = _ref.id,
+  var inputId = _ref.inputId,
     priorMessages = _ref.priorMessages,
     onInputHandler = _ref.onInputHandler,
     onSubmitHandler = _ref.onSubmitHandler;
@@ -23,7 +23,7 @@ function Chat(_ref) {
     }, /*#__PURE__*/_react["default"].createElement("div", {
       className: "flex justify-center items-center h-5/6"
     }, /*#__PURE__*/_react["default"].createElement(_Greeting["default"], null)), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
-      id: id,
+      id: inputId,
       onInputHandler: onInputHandler,
       onSubmitHandler: onSubmitHandler
     }));
@@ -44,11 +44,14 @@ function Chat(_ref) {
       text: response.llm
     }));
   })), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
-    id: id,
+    id: inputId,
     onInputHandler: onInputHandler,
     onSubmitHandler: onSubmitHandler
   }));
 }
+Chat.defaultProps = {
+  priorMessages: []
+};
 Chat.propTypes = {
   /** List of User messages & LLM responses  */
   priorMessages: _propTypes["default"].arrayOf(_propTypes["default"].objectOf(_propTypes["default"].string)),

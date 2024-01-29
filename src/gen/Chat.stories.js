@@ -17,11 +17,14 @@ var _default = exports["default"] = {
   }]
 };
 var Default = exports.Default = {
-  args: {}
+  args: {
+    inputId: 123
+  }
 };
 var LLMResponse = exports.LLMResponse = {
   args: {
-    responses: [{
+    inputId: 123,
+    priorMessages: [{
       user: "Hello",
       llm: "Hello from LLM"
     }, {
