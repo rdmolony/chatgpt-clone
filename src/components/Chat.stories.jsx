@@ -14,12 +14,11 @@ export default {
 };
 
 export const Default = {
-  args: { inputId: 123 }
+  args: { }
 };
 
 export const LLMResponse = {
   args: { 
-    inputId: 123,
     messages: {
       0: {
         user: "Hello",

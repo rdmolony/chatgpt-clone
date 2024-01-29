@@ -11,6 +11,15 @@
    db/default-db))
 
 (re-frame/reg-event-db
- :submit-message
- (fn-traced [db [_ message-id message]]
-            (update db :messages conj {message-id {:user message :llm message}})))
+ :update-prompt
+ (fn-traced [db [_ prompt]]
+            (assoc db :prompt prompt)))
+
+(re-frame/reg-event-db
+ :submit-prompt
+ (fn-traced [db _]
+            (let [counter (inc (:prompt-counter db))
+                  message (conj {counter {:user (:prompt db) :llm (:prompt db)}})]
+              (-> db
+                  (update :messages conj message)
+                  (assoc :prompt-counter counter)))))

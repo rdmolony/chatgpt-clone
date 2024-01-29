@@ -17,13 +17,10 @@ var _default = exports["default"] = {
   }]
 };
 var Default = exports.Default = {
-  args: {
-    inputId: 123
-  }
+  args: {}
 };
 var LLMResponse = exports.LLMResponse = {
   args: {
-    inputId: 123,
     messages: {
       0: {
         user: "Hello",
