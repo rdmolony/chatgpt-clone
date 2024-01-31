@@ -17,7 +17,3 @@
                            (re-frame/dispatch [:submit-prompt]) 
                            )}]
      ]))
-
-(comment
-  (def counter (reagent/atom 0)) 
-  (swap! counter inc))
