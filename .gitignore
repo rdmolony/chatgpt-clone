@@ -14,6 +14,19 @@
 # shadow-cljs cache, port files
 /.shadow-cljs/
 
+# Clojure
+/target
+/classes
+/checkouts
+profiles.clj
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/.prepl-port
+.hgignore
+.hg/
+
 # ------
 # Custom 
 # ------

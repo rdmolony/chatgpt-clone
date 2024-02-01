@@ -2,10 +2,13 @@
 
  
 
- :source-paths ["src/cljs" "test"]
+ :source-paths ["src/clj" "src/cljs" "test"]
 
  :dependencies
- [[reagent "1.1.1"]
+ [[ring/ring-core          "1.9.1"]
+  [ring/ring-jetty-adapter "1.9.1"]
+  
+  [reagent "1.1.1"]
   [re-frame "1.4.2"] 
   [day8.re-frame/tracing "0.6.2"]
   [day8.re-frame/http-fx "0.2.4"]
