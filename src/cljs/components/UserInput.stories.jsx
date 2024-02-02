@@ -9,3 +9,9 @@ export default {
 export const Default = {
   args: { }
 };
+
+export const WaitingForLLM = {
+  args: { 
+    isWaitingForLLM: true
+   }
+};

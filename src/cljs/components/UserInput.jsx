@@ -1,7 +1,9 @@
 import React from 'react';
 
+import SpinnerIcon from './icons/Spinner';
 
-export default function UserInput({ onInputHandler, onSubmitHandler }) {
+
+export default function UserInput({ isWaitingForLLM, onInputHandler, onSubmitHandler }) {
   return (
     <div>
       <form onSubmit={onSubmitHandler}
@@ -9,6 +11,7 @@ export default function UserInput({ onInputHandler, onSubmitHandler }) {
         <input onInput={onInputHandler}
                className="flex-grow focus:outline-none"
                placeholder="Message ChatGPT..."/>
+        {isWaitingForLLM ? <SpinnerIcon/> : null}
         <button className="flex-shrink-0 ml-auto bg-slate-200 text-white p-0.5 rounded-lg dark:text-black dark:border-white dark:bg-white">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white dark:text-black">
             <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>

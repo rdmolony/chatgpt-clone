@@ -5,9 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = UserInput;
 var _react = _interopRequireDefault(require("react"));
+var _Spinner = _interopRequireDefault(require("./icons/Spinner"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function UserInput(_ref) {
-  var onInputHandler = _ref.onInputHandler,
+  var isWaitingForLLM = _ref.isWaitingForLLM,
+    onInputHandler = _ref.onInputHandler,
     onSubmitHandler = _ref.onSubmitHandler;
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("form", {
     onSubmit: onSubmitHandler,
@@ -16,7 +18,7 @@ function UserInput(_ref) {
     onInput: onInputHandler,
     className: "flex-grow focus:outline-none",
     placeholder: "Message ChatGPT..."
-  }), /*#__PURE__*/_react["default"].createElement("button", {
+  }), isWaitingForLLM ? /*#__PURE__*/_react["default"].createElement(_Spinner["default"], null) : null, /*#__PURE__*/_react["default"].createElement("button", {
     className: "flex-shrink-0 ml-auto bg-slate-200 text-white p-0.5 rounded-lg dark:text-black dark:border-white dark:bg-white"
   }, /*#__PURE__*/_react["default"].createElement("svg", {
     width: "24",
