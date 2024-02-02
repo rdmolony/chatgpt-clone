@@ -16,6 +16,5 @@
                           (re-frame/dispatch [::events/update-prompt (-> e .-target .-value)]))
        "onSubmitHandler" (fn [e]
                            (.preventDefault e) 
-                           (re-frame/dispatch [::events/submit-prompt]))
-       "waitingForLLM" @waiting-for-llm?}]
+                           (re-frame/dispatch [::events/submit-prompt]))}]
      ]))

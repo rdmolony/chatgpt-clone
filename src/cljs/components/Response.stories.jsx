@@ -24,3 +24,11 @@ export const UserResponse = {
     text: "I am you"
   }
 };
+
+export const WaitingOnLLMResponse = {
+  args: {
+    fromWhom: "ChatGPT",
+    Icon: OpenAiIcon,
+    text: "",
+  }
+}

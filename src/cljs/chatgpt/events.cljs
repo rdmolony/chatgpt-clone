@@ -23,22 +23,22 @@
             {:db (let [counter (inc (:prompt-counter db)) 
                        message (conj {counter {:user (:prompt db) :llm ""}})] 
                    (-> db 
-                       (update :messages conj message) 
-                       (assoc :prompt-counter counter) 
+                       (update :messages conj message)
+                       (assoc :prompt-counter counter)
                        (assoc :waiting-for-llm? true)))
-            :http-xhrio  {:method :get 
-                          :url    "http://localhost:3001" 
-                          :timeout         8000 
-                          :response-format (ajax/json-response-format {:keywords? true}) 
-                          :on-success  [::submit-prompt-success] 
-                          :on-fail     [::submit-prompt-failure]}}))
+            :http-xhrio {:method          :get
+                         :uri             "http://localhost:3001"
+                         :timeout         8000                                          
+                         :response-format (ajax/json-response-format {:keywords? true})
+                         :on-success      [::fetch-users-success]
+                         :on-failure      [::fetch-users-failure]}}))
 
 (re-frame/reg-event-db
- ::submit-prompt-success
- (fn-traced [db [_ message]]
-            (println message)))
+ ::fetch-users-success
+ (fn-traced [db [_ response]]
+            (println response)))
 
 (re-frame/reg-event-db
- ::submit-prompt-failure
- (fn-traced [db [_ result]]
-            (assoc db :llm-failure result)))
+ ::fetch-users-failure
+ (fn-traced [db [_ response]]
+            (assoc db :llm-failure response)))
