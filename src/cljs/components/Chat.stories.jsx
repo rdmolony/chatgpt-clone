@@ -17,7 +17,18 @@ export const Default = {
   args: { }
 };
 
-export const LLMResponse = {
+export const CallAndResponse = {
+  args: { 
+    messages: {
+      0: {
+        user: "Hello",
+        llm: "Hello from LLM"
+      }
+    }
+  }
+};
+
+export const ManyCallsAndResponses = {
   args: { 
     messages: {
       0: {
@@ -27,6 +38,14 @@ export const LLMResponse = {
       1: {
         user: "Hello again",
         llm: "Hello again from LLM"
+      },
+      2: {
+        user: "Hello again again",
+        llm: "Hello again again from LLM"
+      },
+      3: {
+        user: "Hello...",
+        llm: "Hello..."
       }
     }
   }

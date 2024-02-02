@@ -14,19 +14,21 @@ export default function Chat({
 
   if (Object.keys(messages).length === 0) {
     return (
-      <div className="h-screen mb-4">
-        <div className="flex justify-center items-center h-5/6">
+      <div className="flex flex-col h-screen">
+        <div className="justify-center items-center h-5/6">
           <Greeting/>
         </div>
-        <UserInput onInputHandler={onInputHandler}
-                   onSubmitHandler={onSubmitHandler} />
+        <div>
+          <UserInput onInputHandler={onInputHandler}
+                     onSubmitHandler={onSubmitHandler} />
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="h-screen">
-      <div>
+    <div className="relative flex flex-col h-screen">
+      <div className="h-5/6 overflow-scroll">
         {Object.keys(messages).map((idx) => (
           <div key={idx} className="my-4">
             <Response fromWhom="You" Icon={UserIcon} text={messages[idx].user} />
@@ -34,8 +36,10 @@ export default function Chat({
           </div>
         ))}
       </div>
-      <UserInput onInputHandler={onInputHandler}
-                 onSubmitHandler={onSubmitHandler}/>
+      <div className="items-center">
+        <UserInput onInputHandler={onInputHandler}
+                   onSubmitHandler={onSubmitHandler}/>
+      </div>
     </div>
   )
 }

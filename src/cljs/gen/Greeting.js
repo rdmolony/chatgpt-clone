@@ -9,8 +9,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function Greeting(_ref) {
   _objectDestructuringEmpty(_ref);
-  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "flex justify-center items-center mb-2"
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: "flex flex-col justify-center items-center h-full"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "mb-2"
   }, /*#__PURE__*/_react["default"].createElement("svg", {
     width: "41",
     height: "41",

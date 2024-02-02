@@ -4,8 +4,7 @@
    [re-frame.core :as re-frame]
    [chatgpt.events :as events]
    [chatgpt.views :as views]
-   [chatgpt.config :as config]
-   ))
+   [chatgpt.config :as config]))
 
 
 (defn dev-setup []

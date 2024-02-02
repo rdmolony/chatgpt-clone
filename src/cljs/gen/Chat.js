@@ -18,17 +18,19 @@ function Chat(_ref) {
     onSubmitHandler = _ref.onSubmitHandler;
   if (Object.keys(messages).length === 0) {
     return /*#__PURE__*/_react["default"].createElement("div", {
-      className: "h-screen mb-4"
+      className: "flex flex-col h-screen"
     }, /*#__PURE__*/_react["default"].createElement("div", {
-      className: "flex justify-center items-center h-5/6"
-    }, /*#__PURE__*/_react["default"].createElement(_Greeting["default"], null)), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
+      className: "justify-center items-center h-5/6"
+    }, /*#__PURE__*/_react["default"].createElement(_Greeting["default"], null)), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
       onInputHandler: onInputHandler,
       onSubmitHandler: onSubmitHandler
-    }));
+    })));
   }
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "h-screen"
-  }, /*#__PURE__*/_react["default"].createElement("div", null, Object.keys(messages).map(function (idx) {
+    className: "relative flex flex-col h-screen"
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "h-5/6 overflow-scroll"
+  }, Object.keys(messages).map(function (idx) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: idx,
       className: "my-4"
@@ -41,10 +43,12 @@ function Chat(_ref) {
       Icon: _OpenAi["default"],
       text: messages[idx].llm
     }));
-  })), /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "items-center"
+  }, /*#__PURE__*/_react["default"].createElement(_UserInput["default"], {
     onInputHandler: onInputHandler,
     onSubmitHandler: onSubmitHandler
-  }));
+  })));
 }
 Chat.defaultProps = {
   messages: {}

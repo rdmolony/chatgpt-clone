@@ -4,8 +4,8 @@
  {8280 "resources/public"
   8290 "target/browser-test"}
 
- :deps true 
- 
+ :deps {:aliases [:cljs]} 
+
  :builds
  {:app
   {:target     :browser
