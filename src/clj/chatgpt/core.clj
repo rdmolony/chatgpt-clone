@@ -8,7 +8,8 @@
   (case (:uri req)
     {:status 200
      :body (with-out-str (pprint/pprint req))
-     :headers {"Content-Type" "application/json"}}))
+     :headers {"Content-Type" "application/json"
+                "Access-Control-Allow-Origin" "*"}}))
 
 (defn start-server []
   (reset! server
