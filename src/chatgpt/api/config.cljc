@@ -8,4 +8,4 @@
 (def shadow-cljs-port 8280)
 
 (def shadow-cljs-location
-  (str "http://localhost" shadow-cljs-port))
+  (str "http://localhost:" shadow-cljs-port))

@@ -1,7 +1,12 @@
+#_(ns deps.edn
+  (:require [clojure.repl.deps :refer [add-libs]]))
 {:deps
+ #_(add-libs)
  {ring/ring-core          {:mvn/version "1.9.1"}
   ring/ring-jetty-adapter {:mvn/version "1.9.1"}
-  metosin/reitit {:mvn/version "0.7.0-alpha7"}}
+  metosin/reitit {:mvn/version "0.7.0-alpha7"}
+  metosin/muuntaja {:mvn/version "0.6.8"}
+  metosin/ring-http-response {:mvn/version "0.9.1"}}
  :aliases
  {:cljs
   {:extra-deps {thheller/shadow-cljs {:mvn/version "2.11.23"}

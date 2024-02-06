@@ -1,9 +1,10 @@
 (ns chatgpt.events
-  (:require
+  (:require 
    [ajax.core :as ajax]
    [re-frame.core :as re-frame] 
    [day8.re-frame.http-fx]
    [day8.re-frame.tracing :refer-macros [fn-traced]]
+   [chatgpt.api.config :as api-config]
    [chatgpt.db :as db]
    ))
 
@@ -27,7 +28,7 @@
                        (assoc :prompt-counter counter)
                        (assoc :waiting-for-llm? true)))
             :http-xhrio {:method          :get
-                         :uri             "http://localhost:3001"
+                         :uri             api-config/api-location
                          :timeout         8000                                          
                          :response-format (ajax/json-response-format {:keywords? true})
                          :on-success      [::fetch-users-success]
