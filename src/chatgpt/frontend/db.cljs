@@ -1,4 +1,4 @@
-(ns chatgpt.db)
+(ns chatgpt.frontend.db)
 
 (def default-db
   {:messages {}

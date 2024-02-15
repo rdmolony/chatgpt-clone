@@ -1,9 +1,9 @@
-(ns chatgpt.views
+(ns chatgpt.frontend.views
   (:require
    [reagent.core :as reagent]
    [re-frame.core :as re-frame]
-   [chatgpt.events :as events] 
-   [chatgpt.subs :as subs] 
+   [chatgpt.frontend.events :as events] 
+   [chatgpt.frontend.subs :as subs] 
    ["../gen/index.js" :as c]))
 
 (defn main-panel []

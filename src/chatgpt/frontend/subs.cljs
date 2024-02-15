@@ -1,4 +1,4 @@
-(ns chatgpt.subs
+(ns chatgpt.frontend.subs
   (:require
    [re-frame.core :as re-frame]))
 

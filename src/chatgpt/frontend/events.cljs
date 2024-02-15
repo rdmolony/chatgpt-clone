@@ -1,11 +1,11 @@
-(ns chatgpt.events
+(ns chatgpt.frontend.events
   (:require 
    [ajax.core :as ajax]
    [re-frame.core :as re-frame] 
    [day8.re-frame.http-fx]
    [day8.re-frame.tracing :refer-macros [fn-traced]]
-   [chatgpt.api.config :as api-config]
-   [chatgpt.db :as db]
+   [chatgpt.frontend.config :as api-config]
+   [chatgpt.frontend.db :as db]
    ))
 
 (re-frame/reg-event-db

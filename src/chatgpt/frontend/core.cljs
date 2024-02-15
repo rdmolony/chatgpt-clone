@@ -1,10 +1,10 @@
-(ns chatgpt.core
+(ns chatgpt.frontend.core
   (:require
    [reagent.dom :as rdom]
    [re-frame.core :as re-frame]
-   [chatgpt.events :as events]
-   [chatgpt.views :as views]
-   [chatgpt.config :as config]))
+   [chatgpt.frontend.events :as events]
+   [chatgpt.frontend.views :as views]
+   [chatgpt.frontend.config :as config]))
 
 
 (defn dev-setup []
