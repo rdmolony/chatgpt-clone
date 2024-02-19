@@ -1,4 +1,4 @@
-(ns chatgpt.config)
+(ns chatgpt.api.config)
 
 (def api-port 3000)
 

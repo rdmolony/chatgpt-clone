@@ -4,7 +4,6 @@
    [re-frame.core :as re-frame] 
    [day8.re-frame.http-fx]
    [day8.re-frame.tracing :refer-macros [fn-traced]]
-   [chatgpt.frontend.config :as api-config]
    [chatgpt.frontend.db :as db]
    ))
 
@@ -28,7 +27,7 @@
                        (assoc :prompt-counter counter)
                        (assoc :waiting-for-llm? true)))
             :http-xhrio {:method          :get
-                         :uri             api-config/api-location
+                         :uri             "http://localhost:3000"
                          :timeout         8000                                          
                          :response-format (ajax/json-response-format {:keywords? true})
                          :on-success      [::fetch-users-success]

@@ -1,13 +1,17 @@
 (ns chatgpt.api.server
   (:require [chatgpt.api.config :as config]
-            [chatgpt.api.router :refer [router]]
-            [ring.adapter.jetty :as jetty])
+            [chatgpt.api.router :as router]
+            [ring.adapter.jetty :as jetty]))
+
+(defn app
+  [env]
+  (router/router env))
 
 (defonce server (atom nil))
 
 (defn start-server []
   (reset! server
-          (jetty/run-jetty (fn [req] (router req))
+          (jetty/run-jetty (fn [req] (app req))
                            {:port config/api-port
                             :join? false})))
 
@@ -25,6 +29,5 @@
   (start-server)
   @server 
   (stop-server)
-  (app)
   )
   

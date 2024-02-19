@@ -1,11 +1,34 @@
 (ns chatgpt.api.router
-  (:require [reitit.ring :as ring]
-            [ring.util.http-response :as response]
-            [chatgpt.api.routes :refer [routes]]))
+  (:require [chatgpt.api.routes :refer [routes]]
+            [muuntaja.core :as m]
+            [reitit.ring :as ring] 
+            [reitit.ring.middleware.muuntaja :as muuntaja]
+            [reitit.swagger :as swagger]
+            [reitit.swagger-ui :as swagger-ui]
+            [ring.util.http-response :as response] ))
 
-(def router
+(def swagger-docs
+  ["/swagger.json"
+   {:get
+    {:no-doc true
+     :swagger {:basePath "/"
+               :info {:title "Cheffy API Reference"
+                      :description "The Cheffy API is organised around REST. Returns JSON, Transit (messagepack, json) or EDN encoded responses."
+                      :version "1.0.0"}}
+     :handler (swagger/create-swagger-handler)}}])
+
+(def router-config
+  {:data {:muuntaja m/instance
+          :middleware [swagger/swagger-feature
+                       muuntaja/format-middleware]}})
+
+(defn router
+  [env]
   (ring/ring-handler
    (ring/router
-    routes)
-   (ring/create-default-handler
-    {:not-found (constantly (response/not-found "404 - Page not found"))})))
+    [swagger-docs
+     ["/v1"
+      (routes env)]]
+    router-config)
+   (ring/routes
+    (swagger-ui/create-swagger-ui-handler {:path "/"}))))

@@ -14,4 +14,4 @@
                 day8.re-frame/re-frame-10x {:mvn/version "1.6.0"}
                 re-frisk/re-frisk                {:mvn/version "1.6.0"}
                 binaryage/devtools      {:mvn/version "1.0.6"}}}}
- :paths ["src" "test"]}
+ :paths ["src" "test" "dev"]}

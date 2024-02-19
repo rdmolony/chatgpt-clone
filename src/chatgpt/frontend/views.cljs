@@ -4,7 +4,7 @@
    [re-frame.core :as re-frame]
    [chatgpt.frontend.events :as events] 
    [chatgpt.frontend.subs :as subs] 
-   ["../gen/index.js" :as c]))
+   ["./gen/index.js" :as c]))
 
 (defn main-panel []
   (let [messages (re-frame/subscribe [::subs/messages])

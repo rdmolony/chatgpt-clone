@@ -1,4 +1,6 @@
-(ns chatgpt.api.handlers)
+(ns chatgpt.api.handlers
+  (:require [chatgpt.api.config :as config]
+            [clojure.pprint :as pprint]))
 
 (defn llm [req]
   {:status 200
