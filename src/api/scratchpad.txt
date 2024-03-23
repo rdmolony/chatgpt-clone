@@ -4,8 +4,38 @@
 
 import ballerinax/openai.chat;
 
-chat:ChatCompletionRequestMessage[] messages = [
-    {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "Who won the world series in 2020?"}
-];
+# If I run ...
 
+chat:CreateChatCompletionRequest payload = {
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant."
+        },
+        {
+            "role": "user", "content": "You are a die-hard fan of the Ballerina Language, convince me why I should use it to integrate my frontend with Large Language Models?"
+        }
+    ]
+};
+
+# ... I can see that the content is valid `chat:CreateChatCompletionRequest` 
+
+# Swagger by default, however, does not provide an option to 
+# send payloads via POST to an endpoint as it does with GET parameters?
+# No, I'm wrong!  You can pass a body.  I can pass it ...
+
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a helpful assistant."
+        },
+        {
+            "role": "user", "content": "You are a die-hard fan of the Ballerina Language, convince me why I should use it to integrate my frontend with Large Language Models?"
+        }
+    ]
+}
+
+# >> Ballerina Language is a great choice for integrating your frontend with Large Language Models! Here are a few reasons why you should consider using Ballerina:\n\n1. **Concise and expressive syntax**: Ballerina offers a clean and intuitive syntax that makes it easy to write, read, and maintain code. Its syntax is specifically designed for writing integration code, making it a perfect fit for working with Large Language Models.\n\n2. **Built-in support for web services**: Ballerina comes with native support for web services, making it effortless to create APIs or integrate with external services – which is crucial when working with Large Language Models that are typically accessed via APIs.\n\n3. **Strong type system**: Ballerina has a strong static type system that helps catch errors at compile time, ensuring a higher level of reliability and correctness in your code. This becomes especially important when dealing with complex integrations involving Large Language Models.\n\n4. **Concurrency support**: Ballerina provides built-in support for concurrency, allowing you to handle multiple requests concurrently, which is essential when working with Large Language Models that may require processing multiple requests simultaneously.\n\n5. **Extensive standard library**: Ballerina comes with a rich set of standard libraries for working with various protocols, data formats, and services, making it easier to interact with external systems, including Large Language Models.\n\n6. **Tooling support**: Ballerina provides a range of tools to help you develop, test, and deploy your integrations, including an interactive graphical editor, a test framework, and built-in support for containerization and deployment.\n\nOverall, Ballerina Language offers a powerful and easy-to-use platform for integrating your frontend with Large Language Models. Give it a try, and you'll see how it can streamline your development process and help you build reliable and efficient integrations!
