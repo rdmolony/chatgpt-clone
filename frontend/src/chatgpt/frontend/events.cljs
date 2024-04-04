@@ -5,6 +5,7 @@
    [day8.re-frame.http-fx]
    [day8.re-frame.tracing :refer-macros [fn-traced]]
    [chatgpt.frontend.db :as db]
+   [chatgpt.frontend.prompt.openai :as openai]
    ))
 
 (re-frame/reg-event-db
@@ -26,8 +27,8 @@
                        (update :messages conj message)
                        (assoc :prompt-counter counter)
                        (assoc :waiting-for-llm? true)))
-            :http-xhrio {:method          :get
-                         :uri             "http://localhost:3000"
+            :http-xhrio {:method          :post
+                         :uri             "http://localhost:9999"
                          :timeout         8000                                          
                          :response-format (ajax/json-response-format {:keywords? true})
                          :on-success      [::fetch-users-success]
@@ -36,7 +37,7 @@
 (re-frame/reg-event-db
  ::fetch-users-success
  (fn-traced [db [_ response]]
-            (println response)))
+            (assoc db :llm-success response)))
 
 (re-frame/reg-event-db
  ::fetch-users-failure
