@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run Openai API",
+        "type": "shell",
+        "command": "bal run",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "options": {"cwd": ".//backend//openai"},
+        "runOptions": { "runOn": "folderOpen" }
+      },
+      {
+        "label": "Run Re-Frame",
+        "type": "shell",
+        "command": "npx shadow-cljs -d cider//cider-nrepl:0.28.5 watch :app",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "options": {"cwd": ".//frontend"},
+        "runOptions": { "runOn": "folderOpen" }
+      },
+      {
+        "label": "Run Storybook.js",
+        "type": "shell",
+        "command": "npm start",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "options": {"cwd": ".//frontend"},
+        "runOptions": { "runOn": "folderOpen" }
+      }
+    ]
+  }
